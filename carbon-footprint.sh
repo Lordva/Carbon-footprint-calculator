@@ -1,14 +1,24 @@
 #!/bin/bash
 
 electricity(){
+	local choice
 	clear
 	echo -e "Elecricity consumption depend greatly on your geolocalisation"
 	echo -e ""
 	echo -e "1. France	4. USA"
 	echo -e "2. spain	5. China"
 	echo -e "3. belgium	6. switzerland"
-
-
+	read -p "Enter choice [ 1 - 6 ] " choice
+	case $choice in
+		1) elec_fr ;;
+		2) elec_es ;;
+		3) elec_be ;;
+		4) elec_us ;;
+		5) elec_ch ;;
+		6) elec_sw ;;
+		*) return
+	esac
+}
 
 show_menue() {
 	clear
